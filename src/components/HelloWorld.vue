@@ -8,8 +8,6 @@
 </template>
 
 <script>
-import '@/db/mongo';
-
 export default {
   name: 'HelloWorld',
   data() {
