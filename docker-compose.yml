@@ -1,0 +1,13 @@
+version: '3'
+services:
+  vue:
+    image: node:alpine
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: npm run dev
+  mongo:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
