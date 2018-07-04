@@ -10,6 +10,14 @@ services:
       - "8080:8080"
   mongo:
     image: mongo:latest
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+    # environment:
+      # MONGO_INITDB_ROOT_USERNAME: root
+      # MONGO_INITDB_ROOT_PASSWORD: example
+  appserver:
+    image: node:alpine
+    volumes:
+      - ./server:/app
+    working_dir: /app
+    command: npm start
+    ports:
+      - "8081:8081"
